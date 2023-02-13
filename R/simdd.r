@@ -2,7 +2,7 @@ bfind=function(lambda) {
   q=length(lambda)
   fb=function(b) 1-sum(1/(b+2*lambda))
   if(sum(lambda^2)==0) b0=q
-  else b0=uniroot(fb,interval=c(1,q))$root
+  else b0=stats::uniroot(fb,interval=c(1,q))$root
   b0
 }
 
@@ -33,12 +33,12 @@ rBingham=function(nsim,Aplus,q=dimq(Aplus),mtop=1000) {
   b0=bfind(lambda)
   phi=1+2*lambda/b0
   while(nleft>0 & mloop<mtop) {#G  
-    x=matrix(rnorm(nleft*q),nleft,q)*(matrix(1,nleft,1)%*%
+    x=matrix(stats::rnorm(nleft*q),nleft,q)*(matrix(1,nleft,1)%*%
                  matrix(1/sqrt(phi),1,q))
     r=sqrt((x*x)%*%rep(1,q))
     x=x/(matrix(r,nleft,1)%*%matrix(1,1,q)) # so x is acg
     u=((x*x)*(matrix(1,nleft,1)%*%matrix(lambda,1,q)))%*%rep(1,q)
-    v=runif(nleft)
+    v=stats::runif(nleft)
     logfg=-u+.5*(q-b0)+(q/2)*log((1+2*u/b0)*b0/q)
     fb=exp(logfg)
     fg=exp(-u+.5*(q-b0))*((1+2*u/b0)*b0/q)^(q/2)
@@ -75,14 +75,14 @@ rFisherBingham=function(nsim,mu=0,Aplus=0, q=dimset(mu,Aplus), mtop=1000) {
   b0=bfind(lambda1)
   phi=1+2*lambda1/b0
   while(nleft>0 & mloop<mtop) {
-    x=matrix(rnorm(nleft*q),nleft,q)*(matrix(1,nleft,1)%*%
+    x=matrix(stats::rnorm(nleft*q),nleft,q)*(matrix(1,nleft,1)%*%
                  matrix(1/sqrt(phi),1,q))
     r=sqrt((x*x)%*%rep(1,q))
     x=x/(matrix(r,nleft,1)%*%matrix(1,1,q)) # so x is acg
     xlhs=x%*%t(Gamma1)
     ulhs=kappa*(xlhs%*%mu0) - apply(xlhs*(xlhs%*%Aminus),1,sum)
     urhs=((x*x)*(matrix(1,nleft,1)%*%matrix(lambda1,1,q)))%*%rep(1,q)
-    v=runif(nleft)
+    v=stats::runif(nleft)
     logfg=ulhs+.5*(q-b0)-kappa/2+lambda1min+(q/2)*log((1+2*urhs/b0)*b0/q)
     fg=exp(logfg)
     minfg=min(minfg,min(fg)); maxfg=max(maxfg,max(fg))
@@ -252,7 +252,7 @@ rBingham.Grassmann=function(nsim,Aplus=0, q=dimq(Aplus),r=1,mtop=1000) {
   lf=1
   for(j in 1:r) if(lambda[j]>u0) lf=lf*exp(-comp.fn(lambda[j]))
   while(nleft>0 & mloop<mtop) {#G
-    X1=array(rnorm(nleft*q*r),dim=c(nleft,q,r))
+    X1=array(stats::rnorm(nleft*q*r),dim=c(nleft,q,r))
     X2=X1; X3=X2; U.lambda=matrix(0,nleft,r); U.phi=U.lambda
     for(i in 1:nleft) {
         for(j in 1:r) X2[i,,j]=rescale.phi(X1[i,,j])
@@ -260,7 +260,7 @@ rBingham.Grassmann=function(nsim,Aplus=0, q=dimq(Aplus),r=1,mtop=1000) {
         U.lambda[i,]=extract.lambda(X3[i,,])
         U.phi[i,]=extract.phi(X3[i,,])
     }
-    v=runif(nleft)
+    v=stats::runif(nleft)
     fg=lf*exp(-apply(U.lambda,1,sum)+.5*(q-b0)*r)*(apply(U.phi*b0/q,1,prod))^(q/2)
     minfg=min(minfg,min(fg)); maxfg=max(maxfg,max(fg))#G
     ind=(v<fg) #G
@@ -286,12 +286,12 @@ rBessel=function(nsim,k1,k2,alpha,mtop=1000) {
   phi=1+2*lambda/b0
   den=besselI(k2,0)
   while(nleft>0 & mloop<mtop) {#G  
-    x=matrix(rnorm(nleft*q),nleft,q)*(matrix(1,nleft,1)%*%
+    x=matrix(stats::rnorm(nleft*q),nleft,q)*(matrix(1,nleft,1)%*%
                  matrix(1/sqrt(phi),1,q))
     r=sqrt((x*x)%*%rep(1,q))
     x=x/(matrix(r,nleft,1)%*%matrix(1,1,q)) # so x is acg
     u=((x*x)*(matrix(1,nleft,1)%*%matrix(lambda,1,q)))%*%rep(1,q)
-    v=runif(nleft)
+    v=stats::runif(nleft)
     f=exp(k1*(x[,1]-1)+lambdamin)*besselI(sqrt(k2^2+alpha^2*x[,2]^2),0)/den
     gi=exp(.5*(q-b0))*((1+2*u/b0)*b0/q)^(q/2)
     fg=f*gi
