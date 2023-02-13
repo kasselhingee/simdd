@@ -1,0 +1,10 @@
+bibentry(bibtype = "Article",
+         title = "A New Unified Approach for the Simulation of a Wide Class of Directional Distributions",
+         author = c("John T. Kent", "Asaad M. Ganeiber", "Kanti V. Mardia"),
+         doi = "10.1080/10618600.2017.1390468",
+         journal = "Journal of Computational and Graphical Statistics",
+         volume = 27,
+         number = 2,
+         pages = "291-301",
+         year = "2018")
+
