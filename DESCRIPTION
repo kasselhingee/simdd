@@ -1,0 +1,12 @@
+Package: simdd
+Type: Package
+Title: Simulation of various directional distributions
+Version: 1.0
+Date: 2016-02-11
+Author: John Kent
+Maintainer: John Kent <j.t.kent@leeds.ac.uk>
+Description: To simulate from various directional distributions,as 
+  described in the paper "A new unified approach for the simulation 
+  of a wide class of directional distributions"
+License: GPL-2
+Packaged: 2016-02-12 10:35:57 UTC; john
