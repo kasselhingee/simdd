@@ -1,4 +1,4 @@
-\name{Simulation methods}
+\name{Simulate Fisher Bingham and related distributions}
 %\name{rFisherBingham}
 \alias{rFisherBingham}
 \alias{rBingham}
@@ -27,99 +27,97 @@ rBessel(nsim, k1, k2, alpha, mtop=1000)
    \item{nsim}{the desired number of simulations
 %%     ~~Describe \code{nsim} here~~
 }
-\item{mu}{a vector of length q.  If mu is entered as a scalar, it
-  is interpreted as the vector (0,...,0,mu) with zeros except in the
+\item{mu}{a vector of length \code{q}.  If \code{mu} is entered as a scalar, it
+  is interpreted as the vector \code{(0,...,0,mu)} with zeros except in the
   final coordinate.
 %%     ~~Describe \code{mu} here~~
 }
 
-\item{Aplus}{a symmetric q by q matrix.  If Aplus is given as a scalar,
-  it is interpreted as the q by q matrix of zeros.  If Aplus is given as
-  a vector, it is interpreted as the matrix diag(Aplus).}
+\item{Aplus}{a symmetric \code{q} by \code{q} matrix.  If \code{Aplus} is given as a scalar,
+  it is interpreted as the \code{q} by \code{q} matrix of zeros.  If \code{Aplus} is given as
+  a vector, it is interpreted as the matrix \code{diag(Aplus)}.}
 
-\item{q}{The simulation is done on the unit sphere in R^q.  Thus for the
-  circle, q=2.  Note that q only needs to be given explictly if 
-  both mu and Aplus are scalars.  In the default setting
-  q=dimset(mu,Aplus), the internal function dimset determines q from the
-  length of mu or the dimension of Aplus, if it can.}
+\item{q}{The simulation is done on the unit sphere in \eqn{R^q}.  Thus for the
+  circle, \code{q=2}.  Note that \code{q} only needs to be given explicitly if 
+  both \code{mu} and \code{Aplus} are scalars.  In the default setting
+  \code{q=dimset(mu,Aplus)}, the internal function \code{dimset} determines \code{q} from the
+  length of \code{mu} or the dimension of \code{Aplus}, if it can.}
 
-\item{r}{For rBingham.Grassmann, r denotes the number of columns (1 <=r
-<=q-1) in the matrix Bingham distribution}
+\item{r}{For \code{rBingham.Grassmann}, \code{r} denotes the number of columns (\code{1 <=r
+<=q-1)} in the matrix Bingham distribution}
 
 \item{mtop}{An internal parameter, designed to prevent infinite loops.}
 
 \item{F}{The 3 by 3 parameter matrix for the matrix Fisher
-      distribution in the function rFisher.SO3.}
+      distribution in the function \code{rFisher.SO3}.}
     
 \item{k1, k2, alpha}{The two concentration parameters and the
-      interaction parameter in  the function rvMsin.torus.}
+      interaction parameter in  the function \code{rvMsin.torus}.}
 }
 
 \details{
-   The Fisher Bingham distribution on the unit sphere in R^q has density
+   The Fisher Bingham distribution on the unit sphere in \eqn{R^q} has density
   proportional to
 
-  exp(mu^T x + x^T Aplus x)
+  \deqn{\exp(\code{mu}^T x + x^T \code{Aplus}\  x)}
 
-  where x is a unit vector in R^q, and mu (q-dimensional vector) and
-  Aplus (q by q symmetric) are parameters.
+  where \eqn{x} is a unit vector in \eqn{R^q}, and \code{mu} (\eqn{q}-dimensional vector) and
+  \code{Aplus} (\eqn{q} by \eqn{q} symmetric) are parameters.
 
-  The matrix Bingham distribution on q by r matrices X whose columns are
+  The matrix Bingham distribution on \eqn{q} by \eqn{r} matrices \eqn{X} whose columns are
   orthonormal, is given by the density proportional to 
 
-  exp(trace(X^T Aplus X)).
+  \deqn{\exp(trace(X^T \code{Aplus}\  X)).}
 
-  The Bingham distribution on the unit sphere in R^q can be simulated
-  using (a) rBingham, (b) rFisherBingham with mu=0, and (c)
-  rBingham.Grassmann with r=1.  Choice (a) will be fastest.
+  The Bingham distribution on the unit sphere in \eqn{R^q} can be simulated
+  using (a) \code{rBingham}, (b) \code{rFisherBingham} with \code{mu=0}, and (c)
+  \code{rBingham.Grassmann} with \code{r=1}.  Choice (a) will be fastest.
 
-  The Fisher distribution can be simulated using rFisherBingham with
-  Aplus=0.
+  The Fisher distribution can be simulated using \code{rFisherBingham} with
+  \code{Aplus=0}.
 
   The matrix Fisher distribution on SO(3) has density proportional to 
 
-  exp(trace(F^T X))
+  \deqn{\exp(trace(\code{F}^T X))}
 
-  where X is a 3 by 3 rotation matrix, and F is a 3 by 3 parameter
+  where X is a 3 by 3 rotation matrix, and \code{F} is a 3 by 3 parameter
   matrix.
 
   The bivariate von Mises sine model on the torus has density
   proportional to
 
-  exp(k1 cos(theta) + k2 cos(phi) + alpha sin(theta) sin(phi))
+  \deqn{\exp(\code{k1} \cos(\theta) + \code{k2} cos(phi) + \code{alpha} sin(\theta) \sin(\phi))}
 
-  for two angles theta, phi.  The Bessel density is obtained from the
-  bivariate von Mises sine model as the marginal density of theta.}
+  for two angles \eqn{\theta}, \eqn{\phi}.  The Bessel density is obtained from the
+  bivariate von Mises sine model as the marginal density of \eqn{\theta}.}
 
-\value{For rBingham and rFisherBingham, the output is an nsim by q
+\value{For \code{rBingham} and \code{rFisherBingham}, the output is an \code{nsim} by \code{q}
   matrix.  Each row is a simulated unit vector.
 
-  For rBingham.Grassmann, the output is an nsim by q by r array.  For
-  each value of the first index, the result is a simulated q by r matrix with
+  For \code{rBingham.Grassmann}, the output is an \code{nsim} by \code{q} by \code{r} array.  For
+  each value of the first index, the result is a simulated \code{q} by \code{r} matrix with
   orthonormal columns.
 
-  For rFisher.SO3,  the output is an nsim by r by r array.  For
-  each value of the first index, the result is a simulated  r by r matrix
+  For \code{rFisher.SO3},  the output is an \code{nsim} by \code{r} by \code{r} array.  For
+  each value of the first index, the result is a simulated  \code{r} by \code{r} matrix
   rotation matrix.
 
-  For rvMsin.torus, the output is an nsim by 4 matrix, with each row
-  containing the simulated value of (cos(theta), sin(theta), cos(phi),
-  sin(phi)).
+  For \code{rvMsin.torus}, the output is an \code{nsim} by 4 matrix, with each row
+  containing the simulated value of \eqn{(\cos(\theta), \sin(\theta), \cos(\phi),
+  \sin(\phi))}.
 
-  For rBessel, the output is an nsim by 2 matrix containing the marginal
-  simulated values of (cos(theta), sin(theta)).
+  For \code{rBessel}, the output is an \code{nsim} by 2 matrix containing the marginal
+  simulated values of \eqn{(\cos(\theta), \sin(\theta))}.
 
-  In all cases, the output has an attribute "summary", which is a vector
+  In all cases, the output has an attribute \code{summary}, which is a vector
   of length 6 summarizing some details about the number of simulations
   needed in the acceptance/rejection algorithm.  The key element of this
-  vector is called "efficiency", a number between 0 and 1, where 1 means
+  vector is called \code{efficiency}, a number between 0 and 1, where 1 means
   that all the simulated values from the envelope distribution have been
   accepted.  }
 
 \references{
-  For details, see the background paper "A new unified approach for the
-simulation of a wide class of directional distributions".
-
+John T. Kent, Asaad M. Ganeiber & Kanti V. Mardia (2018) A New Unified Approach for the Simulation of a Wide Class of Directional Distributions, Journal of Computational and Graphical Statistics, 27:2, 291-301, DOI: 10.1080/10618600.2017.1390468 
 %% ~put references to the literature/web site here ~
 }
 \author{J T Kent
@@ -132,9 +130,9 @@ simulation of a wide class of directional distributions".
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-  The function rvm in the CRAN library "CircStats" provides a more
+  The function \code{rvm} in the CRAN library \code{CircStats} provides a more
   efficient method to simulate from the von Mises distribution (i.e. the
-  Fisher distribution with q=2) than rFisherBingham.
+  Fisher distribution with q=2) than \code{rFisherBingham}.
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{

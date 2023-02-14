@@ -7,7 +7,7 @@
 }
 \description{
   Simulate from various directional distributions using methods
-  described in the paper 'A new unified approach for the simulation 
+  described in the paper `A new unified approach for the simulation 
   of a wide class of directional distributions'.
 }
 \details{
