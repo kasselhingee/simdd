@@ -40,11 +40,10 @@ rBessel(nsim, k1, k2, alpha, mtop=1000)
 \item{q}{The simulation is done on the unit sphere in \eqn{R^q}.  Thus for the
   circle, \code{q=2}.  Note that \code{q} only needs to be given explicitly if 
   both \code{mu} and \code{Aplus} are scalars.  In the default setting
-  \code{q=dimset(mu,Aplus)}, the internal function \code{dimset} determines \code{q} from the
+  the internal function \code{dimset}, \code{q=dimset(mu,Aplus)}, determines \code{q} from the
   length of \code{mu} or the dimension of \code{Aplus}, if it can.}
 
-\item{r}{For \code{rBingham.Grassmann}, \code{r} denotes the number of columns (\code{1 <=r
-<=q-1)} in the matrix Bingham distribution}
+\item{r}{For \code{rBingham.Grassmann}, \code{r} denotes the number of columns (\code{1 <= r <= q-1}) in the matrix Bingham distribution}
 
 \item{mtop}{An internal parameter, designed to prevent infinite loops.}
 
@@ -117,7 +116,7 @@ rBessel(nsim, k1, k2, alpha, mtop=1000)
   accepted.  }
 
 \references{
-John T. Kent, Asaad M. Ganeiber & Kanti V. Mardia (2018) A New Unified Approach for the Simulation of a Wide Class of Directional Distributions, Journal of Computational and Graphical Statistics, 27:2, 291-301, DOI: 10.1080/10618600.2017.1390468 
+John T. Kent, Asaad M. Ganeiber & Kanti V. Mardia (2018) A New Unified Approach for the Simulation of a Wide Class of Directional Distributions, Journal of Computational and Graphical Statistics, 27:2, 291-301, DOI: \doi{10.1080/10618600.2017.1390468} 
 %% ~put references to the literature/web site here ~
 }
 \author{J T Kent

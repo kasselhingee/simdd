@@ -7,8 +7,7 @@
 }
 \description{
   Simulate from various directional distributions using methods
-  described in the paper `A new unified approach for the simulation 
-  of a wide class of directional distributions'.
+  described by Kent, Ganeiber and Mardia (2018) \doi{10.1080/10618600.2017.1390468}.
 }
 \details{
 \tabular{ll}{
@@ -25,7 +24,7 @@ License: \tab GPL-2\cr
 John Kent <j.t.kent@leeds.ac.uk>
 }
 \references{
-John T. Kent, Asaad M. Ganeiber & Kanti V. Mardia (2018) A New Unified Approach for the Simulation of a Wide Class of Directional Distributions, Journal of Computational and Graphical Statistics, 27:2, 291-301, DOI: 10.1080/10618600.2017.1390468 
+John T. Kent, Asaad M. Ganeiber & Kanti V. Mardia (2018) A New Unified Approach for the Simulation of a Wide Class of Directional Distributions, Journal of Computational and Graphical Statistics, 27:2, 291-301, DOI: \doi{10.1080/10618600.2017.1390468} 
 }
 %~~ Optionally other standard keywords, one per line, from file KEYWORDS in ~~
 %~~ the R documentation directory ~~

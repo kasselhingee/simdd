@@ -10,8 +10,7 @@ Authors@R:
      email = "kassel.hingee@anu.edu.au")
   )
 Description: Simulate from various directional distributions using methods
-  described in the paper 'A new unified approach for the simulation 
-  of a wide class of directional distributions'.
+  described by Kent, Ganeiber and Mardia (2018) <doi:10.1080/10618600.2017.1390468>.
 License: GPL-2
 
 
