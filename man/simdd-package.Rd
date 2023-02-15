@@ -3,18 +3,17 @@
 \alias{simdd}
 \docType{package}
 \title{
-  simdd -- Simulation of various directional distributions
+  simdd -- Simulation of Fisher Bingham and Related Directional Distributions
 }
 \description{
-  Simulate from various directional distributions using methods
-  described by Kent, Ganeiber and Mardia (2018) \doi{10.1080/10618600.2017.1390468}.
+  Simulate from Fisher Bingham and related directional distributions using methods described by Kent, Ganeiber and Mardia (2018) <doi:10.1080/10618600.2017.1390468>.
 }
 \details{
 \tabular{ll}{
 Package: \tab simdd\cr
 Type: \tab Package\cr
 Version: \tab 1.1\cr
-Date: \tab 2023-02-13\cr
+Date: \tab 2023-02-15\cr
 License: \tab GPL-2\cr
 }
 %~~ An overview of how to use the package, including the most important ~~

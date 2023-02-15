@@ -58,7 +58,7 @@ rBessel(nsim, k1, k2, alpha, mtop=1000)
    The Fisher Bingham distribution on the unit sphere in \eqn{R^q} has density
   proportional to
 
-  \deqn{\exp(\code{mu}^T x + x^T \code{Aplus}\  x)}
+  \deqn{\exp(\code{mu}^T x + x^T \code{Aplus} x)}
 
   where \eqn{x} is a unit vector in \eqn{R^q}, and \code{mu} (\eqn{q}-dimensional vector) and
   \code{Aplus} (\eqn{q} by \eqn{q} symmetric) are parameters.
@@ -66,7 +66,7 @@ rBessel(nsim, k1, k2, alpha, mtop=1000)
   The matrix Bingham distribution on \eqn{q} by \eqn{r} matrices \eqn{X} whose columns are
   orthonormal, is given by the density proportional to 
 
-  \deqn{\exp(trace(X^T \code{Aplus}\  X)).}
+  \deqn{\exp(trace(X^T \code{Aplus} X)).}
 
   The Bingham distribution on the unit sphere in \eqn{R^q} can be simulated
   using (a) \code{rBingham}, (b) \code{rFisherBingham} with \code{mu=0}, and (c)

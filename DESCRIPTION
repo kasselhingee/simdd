@@ -1,16 +1,15 @@
 Package: simdd
 Type: Package
-Title: Simulation of various directional distributions
+Title: Simulation of Fisher Bingham and Related Directional Distributions
 Version: 1.1
-Date: 2023-02-13
+Date: 2023-02-15
 Authors@R: 
   c(person(given = "John", family = "Kent", email = "j.t.kent@leeds.ac.uk",
      role = c("aut", "cph")),
   person(given = "Kassel Liam", family = "Hingee", role = "cre",
      email = "kassel.hingee@anu.edu.au")
   )
-Description: Simulate from various directional distributions using methods
-  described by Kent, Ganeiber and Mardia (2018) <doi:10.1080/10618600.2017.1390468>.
+Description: Simulate from Fisher Bingham and related directional distributions  using methods described by Kent, Ganeiber and Mardia (2018) <doi:10.1080/10618600.2017.1390468>.
 License: GPL-2
 
 
