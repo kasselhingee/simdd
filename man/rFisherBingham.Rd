@@ -19,7 +19,7 @@
 rFisherBingham(nsim, mu = 0, Aplus = 0, q = dimset(mu, Aplus), mtop = 1000)
 rBingham(nsim, Aplus, q = dimq(Aplus), mtop = 1000)
 rBingham.Grassmann(nsim, Aplus = 0, q = dimq(Aplus), r = 1, mtop = 1000)
-rFisher.SO3(nsim, F)
+rFisher.SO3(nsim, Fmat)
 rvMsin.torus(nsim, k1, k2, alpha, mtop=1000)
 rBessel(nsim, k1, k2, alpha, mtop=1000)
 }
@@ -77,9 +77,9 @@ rBessel(nsim, k1, k2, alpha, mtop=1000)
 
   The matrix Fisher distribution on SO(3) has density proportional to 
 
-  \deqn{\exp(trace(\code{F}^T X))}
+  \deqn{\exp(trace(\code{Fmat}^T X))}
 
-  where X is a 3 by 3 rotation matrix, and \code{F} is a 3 by 3 parameter
+  where X is a 3 by 3 rotation matrix, and \code{Fmat} is a 3 by 3 parameter
   matrix.
 
   The bivariate von Mises sine model on the torus has density

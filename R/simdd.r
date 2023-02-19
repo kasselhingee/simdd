@@ -185,40 +185,40 @@ so3tos3=function(XX) {
   vv
 }
 
-mf2b=function(F) {
+mf2b=function(Fmat) {
   # calculate 4 by 4 symmetric parameter A matrix for Bingham
-  # input is 3 by 3 parameter matrix F for matrix Fisher
+  # input is 3 by 3 parameter matrix Fmat for matrix Fisher
   A=matrix(0,4,4)
-  A[1,2]=F[3,2]-F[2,3]; A[3,4]=F[3,2]+F[2,3] 
-  A[1,3]=F[1,3]-F[3,1]; A[2,4]=F[1,3]+F[3,1]
-  A[1,4]=F[2,1]-F[1,2]; A[2,3]=F[2,1]+F[1,2]
+  A[1,2]=Fmat[3,2]-Fmat[2,3]; A[3,4]=Fmat[3,2]+Fmat[2,3] 
+  A[1,3]=Fmat[1,3]-Fmat[3,1]; A[2,4]=Fmat[1,3]+Fmat[3,1]
+  A[1,4]=Fmat[2,1]-Fmat[1,2]; A[2,3]=Fmat[2,1]+Fmat[1,2]
   A=A+t(A)
-  A[2,2]=-2*(F[2,2]+F[3,3])
-  A[3,3]=-2*(F[1,1]+F[3,3])
-  A[4,4]=-2*(F[1,1]+F[2,2])
+  A[2,2]=-2*(Fmat[2,2]+Fmat[3,3])
+  A[3,3]=-2*(Fmat[1,1]+Fmat[3,3])
+  A[4,4]=-2*(Fmat[1,1]+Fmat[2,2])
   A=A-mean(diag(A))*diag(4)
   A
 }
 b2mf=function(A) {
-  # calculate 3 by 3 F parameter matrix for matrix Fisher
+  # calculate 3 by 3 Fmat parameter matrix for matrix Fisher
   # input A is a 4 by 4 symmetric matrix 
-  F=matrix(0,3,3)
-   A=A-A[1,1]*diag(4) # convention for F calculation
-  F[1,1]=-(A[3,3]+A[4,4]-A[2,2])/4
-  F[2,2]=-(A[2,2]+A[4,4]-A[3,3])/4
-  F[3,3]=-(A[2,2]+A[3,3]-A[4,4])/4
-  F[2,3]=(A[3,4]-A[1,2])/2; F[3,2]=(A[3,4]+A[1,2])/2
-  F[1,2]=(A[2,3]-A[1,4])/2; F[2,1]=(A[2,3]+A[1,4])/2
-  F[3,1]=(A[2,4]-A[1,3])/2; F[1,3]=(A[2,4]+A[1,3])/2
-  F
+  Fmat=matrix(0,3,3)
+   A=A-A[1,1]*diag(4) # convention for Fmat calculation
+  Fmat[1,1]=-(A[3,3]+A[4,4]-A[2,2])/4
+  Fmat[2,2]=-(A[2,2]+A[4,4]-A[3,3])/4
+  Fmat[3,3]=-(A[2,2]+A[3,3]-A[4,4])/4
+  Fmat[2,3]=(A[3,4]-A[1,2])/2; Fmat[3,2]=(A[3,4]+A[1,2])/2
+  Fmat[1,2]=(A[2,3]-A[1,4])/2; Fmat[2,1]=(A[2,3]+A[1,4])/2
+  Fmat[3,1]=(A[2,4]-A[1,3])/2; Fmat[1,3]=(A[2,4]+A[1,3])/2
+  Fmat
 }
 
   # rmatrix.fisher3 function definition
   # simulate from the  3 by 3 matrix Fisher distribution
-  # F is the 3 by 3 parameter matrix.
+  # Fmat is the 3 by 3 parameter matrix.
   # output is a 3 by 3 by nsim array of rotation matrices.
 
-rFisher.SO3=function(nsim,F) s3toso3(rBingham(nsim,mf2b(F)))
+rFisher.SO3=function(nsim,Fmat) s3toso3(rBingham(nsim,mf2b(Fmat)))
 
 rBingham.Grassmann=function(nsim,Aplus=0, q=dimq(Aplus),r=1,mtop=1000) {
   ndone=0; nleft=nsim; mloop=0; ntry=0
