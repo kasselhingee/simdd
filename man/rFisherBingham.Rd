@@ -1,5 +1,4 @@
 \name{Simulate Fisher Bingham and related distributions}
-%\name{rFisherBingham}
 \alias{rFisherBingham}
 \alias{rBingham}
 \alias{rBingham.Grassmann}
@@ -25,12 +24,10 @@ rBessel(nsim, k1, k2, alpha, mtop=1000)
 }
 \arguments{
    \item{nsim}{the desired number of simulations
-%%     ~~Describe \code{nsim} here~~
 }
 \item{mu}{a vector of length \code{q}.  If \code{mu} is entered as a scalar, it
   is interpreted as the vector \code{(0,...,0,mu)} with zeros except in the
   final coordinate.
-%%     ~~Describe \code{mu} here~~
 }
 
 \item{Aplus}{a symmetric \code{q} by \code{q} matrix.  If \code{Aplus} is given as a scalar,
@@ -117,22 +114,13 @@ rBessel(nsim, k1, k2, alpha, mtop=1000)
 
 \references{
 John T. Kent, Asaad M. Ganeiber & Kanti V. Mardia (2018) A New Unified Approach for the Simulation of a Wide Class of Directional Distributions, Journal of Computational and Graphical Statistics, 27:2, 291-301, DOI: \doi{10.1080/10618600.2017.1390468} 
-%% ~put references to the literature/web site here ~
 }
 \author{J T Kent
-%%  ~~who you are~~
 }
-%%%\note{
-%%  ~~further notes~~
-%%%}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
   The function \code{rvm} in the CRAN library \code{CircStats} provides a more
   efficient method to simulate from the von Mises distribution (i.e. the
   Fisher distribution with q=2) than \code{rFisherBingham}.
-%% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
 X1=rBingham(10,c(1,2,-3))
@@ -143,5 +131,3 @@ X4=rFisher.SO3(10,matrix(c(1,2,3,4,2,1,0,1,2),3,3))
 X5=rvMsin.torus(10,2.2,3.1,1.3)
 X6=rBessel(10,2.2,3.1,1.3)
 }
-%%%\keyword{ ~kwd1 }
-%%%\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
