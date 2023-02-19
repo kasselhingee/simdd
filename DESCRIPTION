@@ -14,4 +14,5 @@ Description: Simulation methods for the Fisher Bingham distribution on the unit 
  These methods superseded earlier MCMC simulation methods and are more general than earlier simulation methods.
  The methods may be slower in specific situations where there are existing non-MCMC simulation methods (see Section 8 of Kent, Ganeiber and Mardia (2018) <doi:10.1080/10618600.2017.1390468> for further details).
 License: GPL-2
+Suggests: CircStats
 

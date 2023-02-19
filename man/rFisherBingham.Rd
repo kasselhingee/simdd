@@ -82,7 +82,7 @@ rBessel(nsim, k1, k2, alpha, mtop=1000)
   The bivariate von Mises sine model on the torus has density
   proportional to
 
-  \deqn{\exp(\code{k1} \cos(\theta) + \code{k2} cos(phi) + \code{alpha} sin(\theta) \sin(\phi))}
+  \deqn{\exp(\code{k1} \cos(\theta) + \code{k2} cos(\phi) + \code{alpha} sin(\theta) \sin(\phi))}
 
   for two angles \eqn{\theta}, \eqn{\phi}.  The Bessel density is obtained from the
   bivariate von Mises sine model as the marginal density of \eqn{\theta}.}
@@ -118,7 +118,7 @@ John T. Kent, Asaad M. Ganeiber & Kanti V. Mardia (2018) A New Unified Approach 
 \author{J T Kent
 }
 \seealso{
-  The function \code{rvm} in the CRAN library \code{CircStats} provides a more
+  The function \code{\link[CircStats]{rvm}} in the CRAN library \code{CircStats} provides a more
   efficient method to simulate from the von Mises distribution (i.e. the
   Fisher distribution with q=2) than \code{rFisherBingham}.
 }
