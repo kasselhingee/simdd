@@ -47,7 +47,7 @@ rBessel(nsim, k1, k2, alpha, mtop=1000)
 
 \item{mtop}{An internal parameter, designed to prevent infinite loops.}
 
-\item{F}{The 3 by 3 parameter matrix for the matrix Fisher
+\item{Fmat}{The 3 by 3 parameter matrix for the matrix Fisher
       distribution in the function \code{rFisher.SO3}.}
     
 \item{k1, k2, alpha}{The two concentration parameters and the
