@@ -6,7 +6,10 @@
   simdd -- Simulation of Fisher Bingham and Related Directional Distributions
 }
 \description{
-  Simulate from Fisher Bingham and related directional distributions using methods described by Kent, Ganeiber and Mardia (2018) <doi:10.1080/10618600.2017.1390468>.
+Simulation methods for the Fisher Bingham distribution on the unit sphere, the matrix Bingham distribution on a Grassmann manifold, the matrix Fisher distribution on SO(3), and the bivariate von Mises sine model on the torus.
+ The methods use the first ever general purpose acceptance/rejection simulation algorithm for the Bingham distribution and are described fully by Kent, Ganeiber and Mardia (2018).
+ These methods superseded earlier MCMC simulation methods and are more general than earlier simulation methods.
+ The methods may be slower in specific situations where there are existing non-MCMC simulation methods (see Section 8 of Kent, Ganeiber and Mardia (2018) for further details).
 }
 \details{
 \tabular{ll}{
