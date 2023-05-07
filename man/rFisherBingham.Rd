@@ -110,7 +110,7 @@ rBessel(nsim, k1, k2, alpha, mtop=1000)
   needed in the acceptance/rejection algorithm.  The key element of this
   vector is called \code{efficiency}, a number between 0 and 1, where 1 means
   that all the simulated values from the envelope distribution have been
-  accepted.  }
+  accepted. The \code{success} entry is \code{0} if the simulations were not completed, often due to the number of iterations (in entry \code{mloops}) reaching \code{mtop}.}
 
 \references{
 John T. Kent, Asaad M. Ganeiber & Kanti V. Mardia (2018) A New Unified Approach for the Simulation of a Wide Class of Directional Distributions, Journal of Computational and Graphical Statistics, 27:2, 291-301, DOI: \doi{10.1080/10618600.2017.1390468} 

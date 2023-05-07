@@ -95,6 +95,7 @@ rFisherBingham=function(nsim,mu=0,Aplus=0, q=dimset(mu,Aplus), mtop=1000) {
   summ=c(ntry,(nsim-nleft)/ntry,(nleft==0),mloop=mloop,minfg,maxfg)
   names(summ)=c("ntry","efficiency","success","mloops","minfg","maxfg") 
   attr(values,"summary")=summ
+  if ((mloop == mtop) && (nleft > 0)){warning("Iterations reached mtop. Exiting before completing requested nsim simulations.")}
   values
 }
 
