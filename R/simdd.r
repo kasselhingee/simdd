@@ -273,7 +273,7 @@ rBingham.Grassmann=function(nsim,Aplus=0, q=dimq(Aplus),r=1,mtop=1000) {
    }
   }
   summ=c(ntry,(nsim-nleft)/ntry,(nleft==0),mloop=mloop,minfg,maxfg)#G
-  names(summ)=c("ntry","eff","success","mloops","minfg","maxfg") #G
+  names(summ)=c("ntry","efficiency","success","mloops","minfg","maxfg") #G
   attr(values,"summary")=summ
   values
 }
