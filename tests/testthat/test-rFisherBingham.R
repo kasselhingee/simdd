@@ -1,9 +1,15 @@
 test_that("rFisherBingham and others warns when mtop too low", {
+  set.seed(128)
   expect_warning(rBingham(10,c(1,2,-3), mtop = 1), "reached mtop")
+  set.seed(127)
   expect_warning(rFisherBingham(10,c(3,2,1),c(1,2,-3), mtop = 1), "reached mtop")
+  set.seed(126)
   expect_warning(rFisher.SO3(10,matrix(c(1,2,3,4,2,1,0,1,2),3,3), mtop = 1), "reached mtop")
+  set.seed(125)
   expect_warning(rBingham.Grassmann(10,c(1,2,-3), r=2, mtop = 1), "reached mtop")
+  set.seed(124)
   expect_warning(rBessel(10,2.2,3.1,1.3, mtop = 1), "reached mtop")
+  set.seed(123)
   expect_warning(rvMsin.torus(10,2.2,3.1,1.3, mtop = 1), "reached mtop")
 })
 
