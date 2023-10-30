@@ -2,7 +2,7 @@ Package: simdd
 Type: Package
 Title: Simulation of Fisher Bingham and Related Directional Distributions
 Version: 1.1-2
-Date: 2023-05-08
+Date: 2023-10-31
 Authors@R: 
   c(person(given = "John", family = "Kent", email = "j.t.kent@leeds.ac.uk",
      role = c("aut", "cph")),

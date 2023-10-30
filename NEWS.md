@@ -1,3 +1,10 @@
+# Version 1.1-2
+
++ removed out of data table on version number and licensing in one of the man files (noticed by Kurt Hornik)
++ the argument mtop has more explanation and warning will be generated if mtop is reached
++ help information about the returned summary attribute
++ more consistent summary attribute names: eff -> efficiency
+
 # Version 1.1-1
 Changes requested by CRAN:
 
