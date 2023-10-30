@@ -42,7 +42,7 @@ rBessel(nsim, k1, k2, alpha, mtop=1000)
 
 \item{r}{For \code{rBingham.Grassmann}, \code{r} denotes the number of columns (\code{1 <= r <= q-1}) in the matrix Bingham distribution}
 
-\item{mtop}{The maximum number of attempts for generating simulations, so \code{mtop} should be larger than \code{nsim}. A finite \code{mtop} prevents infinite loops in extreme situations.}
+\item{mtop}{The maximum number of attempts to generate \code{nsim} simulations. A finite \code{mtop} prevents infinite loops in extreme situations. If \code{mtop} is reached there will be a warning.}
 
 \item{Fmat}{The 3 by 3 parameter matrix for the matrix Fisher
       distribution in the function \code{rFisher.SO3}.}
