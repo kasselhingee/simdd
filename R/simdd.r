@@ -314,8 +314,8 @@ rvMsin.torus=function(nsim,k1,k2,alpha,mtop=1000) {
   X=rBessel(nsim,k1,k2,alpha,mtop = mtop)
   summ=attr(X,"summary")
   kappa=sqrt(k2^2+alpha*X[,2]) # conditional concentrations
-  Y=matrix(0,nsim,2)
-  for(i in 1:nsim) Y[i,]=rFisherBingham(1,c(k2,alpha*X[i,2]))
+  Y=matrix(0,nrow(X),2)
+  for(i in 1:nrow(X)) Y[i,]=rFisherBingham(1,c(k2,alpha*X[i,2]))
   values=cbind(X,Y); attr(values,"summary")=summ
   values
   
