@@ -11,15 +11,6 @@ Simulation methods for the Fisher Bingham distribution on the unit sphere, the m
  These methods superseded earlier MCMC simulation methods and are more general than earlier simulation methods.
  The methods can be slower in specific situations where there are existing non-MCMC simulation methods (see Section 8 of Kent, Ganeiber and Mardia (2018) for further details).
 }
-\details{
-\tabular{ll}{
-Package: \tab simdd\cr
-Type: \tab Package\cr
-Version: \tab 1.1\cr
-Date: \tab 2023-02-15\cr
-License: \tab GPL-2\cr
-}
-}
 \author{
 John Kent <j.t.kent@leeds.ac.uk>
 }
